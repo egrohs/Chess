@@ -34,6 +34,7 @@ import javax.swing.border.TitledBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import chess.model.Player;
 import chess.model.pieces.Bishop;
 import chess.model.pieces.King;
 import chess.model.pieces.Knight;

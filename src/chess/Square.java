@@ -17,7 +17,6 @@ import chess.model.pieces.Piece;
  *
  */
 public class Square implements Cloneable {
-
 	// Member Variables
 	private static final long serialVersionUID = 1L;
 	private boolean ispossibledestination;
@@ -61,7 +60,7 @@ public class Square implements Cloneable {
 			piece = null;
 	}
 
-	public void setPiece(Piece p) // Function to inflate a cell with a piece
+	/*public void setPiece(Piece p) // Function to inflate a cell with a piece
 	{
 		piece = p;
 		ImageIcon img = new javax.swing.ImageIcon(this.getClass().getResource(p.getPath()));
@@ -138,5 +137,5 @@ public class Square implements Cloneable {
 	public boolean ischeck() // Function to check if the current cell is in check
 	{
 		return ischeck;
-	}
+	}*/
 }
