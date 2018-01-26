@@ -2,7 +2,7 @@ package chess.model.pieces;
 
 import java.util.ArrayList;
 
-import chess.Square;
+import chess.model.Square;
 
 public class King extends Piece{
 	

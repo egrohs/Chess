@@ -2,7 +2,7 @@ package chess.model.pieces;
 
 import java.util.ArrayList;
 
-import chess.Square;
+import chess.model.Square;
 
 /**
  * This is the Queen Class inherited from the abstract Piece class

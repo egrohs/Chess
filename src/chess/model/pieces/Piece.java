@@ -1,8 +1,9 @@
 package chess.model.pieces;
 
 import java.util.ArrayList;
+import java.util.List;
 
-import chess.Square;
+import chess.model.Square;
 
 /**
  * This is the Piece Class. It is an abstract class from which all the actual pieces are inherited.
@@ -17,7 +18,7 @@ public abstract class Piece implements Cloneable{
 	private String id=null;
 	private String path;
 	protected ArrayList<Square> possiblemoves = new ArrayList<Square>();  //Protected (access from child classes)
-	public abstract ArrayList<Square> move(Square pos[][],int x,int y);  //Abstract Function. Must be overridden
+	public abstract List<Square> move(Square pos[][],int x,int y);  //Abstract Function. Must be overridden
 	
 	//Id Setter
 	public void setId(String id)

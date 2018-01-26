@@ -1,4 +1,4 @@
-package chess;
+package chess.gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,13 +17,13 @@ import javax.swing.Timer;
 public class Time
 {
     private JLabel label;
-    Timer countdownTimer;
+    public Timer countdownTimer;
     int Timerem;
     public Time(JLabel passedLabel)
     {
        countdownTimer = new Timer(1000, new CountdownTimerListener());
        this.label = passedLabel;
-       Timerem=Main.timeRemaining;
+       Timerem=SwingMain.timeRemaining;
     }
     
     //A function that starts the timer
@@ -35,7 +35,7 @@ public class Time
     //A function that resets the timer
     public void reset()
     {
-    	Timerem=Main.timeRemaining;
+    	Timerem=SwingMain.timeRemaining;
     }
     
     //A function that is called after every second. It updates the timer and takes other necessary actions
@@ -56,7 +56,7 @@ public class Time
                label.setText("Time's up!");
                reset();
                start();
-               Main.Mainboard.changechance();
+               SwingMain.Mainboard.changechance();
 		 }
     }
  }

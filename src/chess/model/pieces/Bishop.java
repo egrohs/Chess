@@ -2,7 +2,7 @@ package chess.model.pieces;
 
 import java.util.ArrayList;
 
-import chess.Square;
+import chess.model.Square;
 
 /**
  * This is the Bishop Class. The Move Function defines the basic rules for

@@ -2,7 +2,7 @@ package chess.model.pieces;
 
 import java.util.ArrayList;
 
-import chess.Square;
+import chess.model.Square;
 
 /**
  * This is the Pawn Class inherited from the piece

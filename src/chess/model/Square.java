@@ -1,14 +1,11 @@
-package chess;
+package chess.model;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import chess.model.pieces.King;
 import chess.model.pieces.Piece;
 
 /**
@@ -20,10 +17,10 @@ public class Square implements Cloneable {
 	// Member Variables
 	private static final long serialVersionUID = 1L;
 	private boolean ispossibledestination;
-	private JLabel content;
+	//private JLabel content;
 	private Piece piece;
-	JPanel painel = new JPanel();
-	int x, y; // is public because this is to be accessed by all the other class
+	//JPanel painel = new JPanel();
+	public int x, y; // is public because this is to be accessed by all the other class
 	private boolean isSelected = false;
 	private boolean ischeck = false;
 
@@ -31,14 +28,6 @@ public class Square implements Cloneable {
 	public Square(int x, int y, Piece p) {
 		this.x = x;
 		this.y = y;
-
-		painel.setLayout(new BorderLayout());
-
-		if ((x + y) % 2 == 0)
-			painel.setBackground(new Color(113, 198, 113));
-
-		else
-			painel.setBackground(Color.white);
 
 		if (p != null)
 			setPiece(p);
@@ -49,34 +38,21 @@ public class Square implements Cloneable {
 	public Square(Square cell) throws CloneNotSupportedException {
 		this.x = cell.x;
 		this.y = cell.y;
-		painel.setLayout(new BorderLayout());
-		if ((x + y) % 2 == 0)
-			painel.setBackground(new Color(113, 198, 113));
-		else
-			painel.setBackground(Color.white);
+
 		if (cell.getpiece() != null) {
 			setPiece(cell.getpiece().getcopy());
 		} else
 			piece = null;
 	}
 
-	/*public void setPiece(Piece p) // Function to inflate a cell with a piece
+	public void setPiece(Piece p) // Function to inflate a cell with a piece
 	{
 		piece = p;
-		ImageIcon img = new javax.swing.ImageIcon(this.getClass().getResource(p.getPath()));
-		content = new JLabel(img);
-		this.painel.add(content);
 	}
 
 	public void removePiece() // Function to remove a piece from the cell
 	{
-		if (piece instanceof King) {
-			piece = null;
-			this.painel.remove(content);
-		} else {
-			piece = null;
-			this.painel.remove(content);
-		}
+		piece = null;
 	}
 
 	public Piece getpiece() // Function to access piece of a particular cell
@@ -86,7 +62,6 @@ public class Square implements Cloneable {
 
 	public void select() // Function to mark a cell indicating it's selection
 	{
-		this.painel.setBorder(BorderFactory.createLineBorder(Color.red, 6));
 		this.isSelected = true;
 	}
 
@@ -97,19 +72,16 @@ public class Square implements Cloneable {
 
 	public void deselect() // Function to delselect the cell
 	{
-		this.painel.setBorder(null);
 		this.isSelected = false;
 	}
 
 	public void setpossibledestination() // Function to highlight a cell to indicate that it is a possible valid move
 	{
-		this.painel.setBorder(BorderFactory.createLineBorder(Color.blue, 4));
 		this.ispossibledestination = true;
 	}
 
 	public void removepossibledestination() // Remove the cell from the list of possible moves
 	{
-		this.painel.setBorder(null);
 		this.ispossibledestination = false;
 	}
 
@@ -120,22 +92,16 @@ public class Square implements Cloneable {
 
 	public void setcheck() // Function to highlight the current cell as checked (For King)
 	{
-		this.painel.setBackground(Color.RED);
 		this.ischeck = true;
 	}
 
 	public void removecheck() // Function to deselect check
 	{
-		this.painel.setBorder(null);
-		if ((x + y) % 2 == 0)
-			painel.setBackground(new Color(113, 198, 113));
-		else
-			painel.setBackground(Color.white);
 		this.ischeck = false;
 	}
 
 	public boolean ischeck() // Function to check if the current cell is in check
 	{
 		return ischeck;
-	}*/
+	}
 }
